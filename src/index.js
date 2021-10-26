@@ -18,6 +18,12 @@ app.get('/', (req,res) =>{
 });
 
 //routes
+const sms = require('../src/libs/sms/routes/sms');
+app.use(sms);
+
+const email = require('../src/libs/email/routes/email');
+app.use(email);
+
 
 //Port
 const port = config.get('SERVER.port');
